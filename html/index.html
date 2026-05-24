@@ -1,27 +1,58 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clima Facil - Painel Central</title>
 </head>
+
 <body>
-   <header>
+    <header>
         <h2>Painel central</h2>
         <h3>Loacalização atual</h3>
         <h3>Data</h3>
-   </header>
+    </header>
 
     <div id="sidebar"></div>
 
     <main class="dashboard">
+        <!--CARD PRINCIPAL-->
         <section class="card-principal">
-            <article>
 
+            <!--CONTEUDO PRINCIPAL-->
+            <article id="card-cidade">
+                <h2 id="cidade-atual"></h2>
+                <div class="clima-info">
+                    <p id="temperatura-atual"></p>
+                    <div class="clima-detalhes">
+                        <p id="descricao-clima"></p>
+                        <p>
+                            Vento:
+                            <span id="vento-atual"></span>
+                        </p>
+                        <p>
+                            Umidade:
+                            <span id="umidade-atual"></span>
+                        </p>
+                    </div>
+                </div>
             </article>
-            <button>Favoritar</button>
-            <a href="previsao.html">Provisão proximos 5 dias</a>
+            <!--FIM CONTEUDO PRINCIPAL-->
+
+            <!--INTERATIVIDADE CARD-->
+            <div class="card-acoes">
+                <button type="button">
+                    Favoritar
+                </button>
+                <a href="previsao.html">
+                    Previsão próximos 5 dias
+                </a>
+            </div>
+            <!--FIM INTERATIVIDADE CARD-->
+
         </section>
+        <!--FIM CARD PRINCIPAL-->
 
         <section class="card-resumo">
             <article>ALERTAS</article>
@@ -37,4 +68,5 @@
     <script src="../js/sidebar.js"></script>
     <script src="../js/clima.js"></script>
 </body>
+
 </html>
