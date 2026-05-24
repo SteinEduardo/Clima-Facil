@@ -1,0 +1,14 @@
+servidor api
+https://open-meteo.com
+
+localização das cidades
+    parametros
+    latitude, longitude
+    &latitude=52.52,48.85&longitude=13.41,2.35
+
+    API de geocode
+    https://open-meteo.com/en/docs/geocoding-api?name=curitiba
+    como usar
+    https://geocoding-api.open-meteo.com/v1/search?name=curitiba&count=10&language=en&format=json
+
+    

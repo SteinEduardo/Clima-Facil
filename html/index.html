@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Clima Facil - Painel Central</title>
 </head>
 <body>
    <header>
@@ -14,25 +14,27 @@
 
     <div id="sidebar"></div>
 
-    <main>
-        <section>
-            <article>CARD TEMPERATURA</article>
+    <main class="dashboard">
+        <section class="card-principal">
+            <article>
+
+            </article>
             <button>Favoritar</button>
-            <button>Provisão proximos 5 dias</button>
+            <a href="previsao.html">Provisão proximos 5 dias</a>
         </section>
 
-        <section>
+        <section class="card-resumo">
             <article>ALERTAS</article>
-            <article>PREVISÃO PROXIMAS HORAS</article>
+            <article>PREVISÃO PROXIMA HORA</article>
+            <article>RESUMO</article>
         </section>
 
         <section>
             <iframe src="https://www.google.com/maps?q=Curitiba,PR&output=embed"></iframe>
         </section>
-
-        
     </main>
 
-    <script src="../js/script.js"></script>
+    <script src="../js/sidebar.js"></script>
+    <script src="../js/clima.js"></script>
 </body>
 </html>
