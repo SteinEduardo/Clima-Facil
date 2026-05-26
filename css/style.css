@@ -1,0 +1,130 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(120, 49, 250);
+    display: flex;
+    justify-content: center;
+    color: #ffff;
+    max-width: 1280px;
+}
+
+/*-----------SIDEBAR----------------*/
+#sidebar aside{
+    background-color:rgb(188, 135, 248);
+    width: 240px;
+    min-height: 100vh; /*vh - tamanho da tela*/
+    padding: 24px 16px;
+}
+
+#sidebar ul{
+    list-style: none;
+}
+
+#sidebar a {
+    color: #ffff;
+    display: block;
+    text-decoration: none;
+    padding: 12px;
+}
+
+#sidebar a:hover{
+    background-color: rgb(150, 105, 201);
+}
+
+/*-----------CONTAINER----------------*/
+.container{
+    background-color: rgb(150, 105, 201);;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    gap: 25px;
+}
+
+/*-----------HEADER----------------*/
+header{
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+/*-----------DASHBOARD----------------*/
+.dashboard{
+    background-color: rgb(127, 100, 177);
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/*-----------CARD PRINCIPAL----------------*/
+.card-principal{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px;
+}
+
+#card-cidade h2{
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.clima-info{
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+#temperatura-atual{
+    font-size: 65px;
+    font-weight: bold;
+}
+
+/*-----------ACOES----------------*/
+.card-acoes{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.card-acoes a{
+    color: #ffff;
+    text-decoration: none;
+}
+
+.card-acoes a:hover{
+    background-color:rgb(188, 135, 248);
+}
+
+/*-----------CARD RESUMO----------------*/
+.card-resumo{
+    display: flex;
+    justify-content: center;
+    gap: 250px;
+}
+
+/*-----------MAPA----------------*/
+section{
+    display: flex;
+    justify-content: center;
+}
+
+iframe{
+    width: 90%;
+    height: 300px;
+    border: none;
+    margin-bottom: 25px;
+}
+
+
+
+
+
+
+
+
+

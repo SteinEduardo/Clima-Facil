@@ -5,7 +5,3 @@ fetch("../components/sidebar.html")
   }); 
 
 
- 
-    const cidade = "Curitiba";
-    const cidade = inputUsuario;
-
