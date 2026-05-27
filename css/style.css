@@ -120,6 +120,13 @@ iframe{
     margin-bottom: 25px;
 }
 
+/*-----------PREVISAO PROXIMOS DIAS----------------*/
+.previsao-5dias{
+    display: flex;
+    gap: 20px;
+    margin: auto;
+}
+
 
 
 

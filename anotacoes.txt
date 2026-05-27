@@ -11,4 +11,11 @@ localização das cidades
     como usar
     https://geocoding-api.open-meteo.com/v1/search?name=curitiba&count=10&language=en&format=json
 
-    
+daily = objeto com os proximos dias
+    retorna um array de tamnho 5
+    está separado por temperatura mim e max
+    temperature_2m_max
+    tem um objeto time devolve o dia 2026-05-27
+
+******FALTA PREVISÃO SE CHOVE, GAROA ETC..
+******ADICIONAR EM UM CANTO DO DASHBOARD PRICIPAL QUAL A MIN E MAX

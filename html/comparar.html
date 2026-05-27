@@ -4,47 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
-    <title>Document</title>
+    <title>Comparar Cidades - Clima Facil</title>
 </head>
 <body>
-        <header>
-        <h2>Previsao de 5 dias</h2>
-        <h3>Loacalização atual</h3>
-        <h3>Data</h3>
-    </header>
-
     <div id="sidebar"></div>
 
-    <main>
-        <section>
-            <article>
-                <h3>Comprador entre cidades</h3>
-                <div>
-                    <p>CIDADE A</p>
-                    <input type="text" placeholder="Insira a Ciadde A">
-                </div>
+    <div class="container">
+        <header>
+            <h2>Comparar Cidades</h2>
+            <h3>Localização atual</h3>
+            <h3>Data</h3>
+        </header>
 
-                <div>
-                    <p>CIDADE B</p>
-                    <input type="text" placeholder="Insira a Ciadde B">
-                </div>
-            </article>
+        <main class="dashboard">
 
-            <article>
-                <div>
-                    <p>CIDADE A</p>
-                    CARD CIDADE A
-                </div>
+            <section class="comparar-cidades">
+                <article>
+                    <h3>Comparador entre cidades</h3>
+                    <div>
+                        <p>Cidade A</p>
+                        <input id="input-cidade-a" type="text" placeholder="Insira a cidade A">
+                    </div>
 
-                <div>
-                    <p>CIDADE B</p>
-                    CARD CIDADE B
-                </div>
-            </article>
-        </section>
-    </main>
+                    <div>
+                        <p>Cidade B</p>
+                        <input id="input-cidade-b" type="text" placeholder="Insira a cidade B">
+                    </div>
+                    
+                    <button id="btn-comparar" type="button">Comparar</button>
+                </article>
+
+                <article class="resultado-comparacao">
+                    <div class="card-comparacao">
+                        <h3 id="nome-cidade-a">Cidade A</h3>
+                        <p>Temperatura: <span id="temperatura-cidade-a"></span></p>
+                        <p>Vento: <span id="vento-cidade-a"></span></p>
+                        <p>Umidade: <span id="umidade-cidade-a"></span></p>
+                    </div>
+
+                    <div class="card-comparacao">
+                        <h3 id="nome-cidade-b">Cidade B</h3>
+                        <p>Temperatura: <span id="temperatura-cidade-b"></span></p>
+                        <p>Vento: <span id="vento-cidade-b"></span></p>
+                        <p>Umidade: <span id="umidade-cidade-b"></span></p>
+                    </div>
+                </article>
+            </section>
+        </main>
+    </div>
 
     <script src="../js/sidebar.js"></script>
+    <script src="../js/clima.js"></script>
+    <script src="../js/comparar.js"></script>
 </body>
 </body>
 </html>

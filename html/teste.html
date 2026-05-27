@@ -9,11 +9,11 @@
 </head>
 
 <body>
-    <h2>${cidade.name}</h2>
-    <p>País: ${cidade.country}</p>
-    <p>Temperatura: ${clima.temperature_2m}°C</p>
-    <p>Umidade: ${clima.relative_humidity_2m}%</p>
-    <p>Vento: ${clima.wind_speed_10m} km/h</p>
+    <article class="card-dia">
+        <p>${previsao.time[i]}</p>
+        <p>Máx: ${previsao.temperature_2m_max[i]}°C</p>
+        <p>Mín: ${previsao.temperature_2m_min[i]}°C</p>
+    </article>
 </body>
 
 </html>

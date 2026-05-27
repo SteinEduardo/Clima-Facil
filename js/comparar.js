@@ -1,8 +1,6 @@
 async function buscarCidade(){
-    const inputCidadeA = document.querySelector("#input-cidade-a");
-    const inputCidadeB = document.querySelector("#input-cidade-b");
-    const nomeCidadeA = inputCidadeA.value;
-    const nomeCidadeB = inputCidadeB.value;
+    const inputCidade = document.querySelector("input");
+    const nomeCidade = inputCidade.value;
     const cidade = await ServicoGeocode.buscarInfoCidade(nomeCidade);
     const clima = await ServicoClima.buscarClimaAtual(cidade.latitude, cidade.longitude);
 
@@ -15,20 +13,3 @@ async function buscarCidade(){
 const botaoBuscar = document.querySelector("button");
 
 botaoBuscar.addEventListener("click", buscarCidade);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
