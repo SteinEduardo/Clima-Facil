@@ -127,6 +127,36 @@ iframe{
     margin: auto;
 }
 
+/*-----------COMPARAR----------------*/
+.comparar-cidades{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 25px;
+}
+
+.comparar-cidades article:first-child{
+    display: flex;
+    gap: 25px;
+    align-items: end;
+}
+
+.comparar-cidades article:first-child div{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.resultado-comparacao{
+    display: flex;
+    gap: 25px;
+}
+
+.card-comparacao{
+    background-color: rgb(188, 135, 248);
+    width: 100%;
+    padding: 25px;
+}
 
 
 

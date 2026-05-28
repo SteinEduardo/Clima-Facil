@@ -19,3 +19,23 @@ daily = objeto com os proximos dias
 
 ******FALTA PREVISÃO SE CHOVE, GAROA ETC..
 ******ADICIONAR EM UM CANTO DO DASHBOARD PRICIPAL QUAL A MIN E MAX
+******FILTRO PARA PAISES
+******MOSTRAR UMA LSITA DE POSSIVEIS RESULTADOS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

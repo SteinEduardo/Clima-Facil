@@ -1,15 +1,28 @@
-async function buscarCidade(){
-    const inputCidade = document.querySelector("input");
-    const nomeCidade = inputCidade.value;
-    const cidade = await ServicoGeocode.buscarInfoCidade(nomeCidade);
-    const clima = await ServicoClima.buscarClimaAtual(cidade.latitude, cidade.longitude);
+async function compararCidades(){
+    const inputCidadeA = document.querySelector("#input-cidade-a");
+    const inputCidadeB = document.querySelector("#input-cidade-b");
 
-    document.querySelector('#cidade-atual').textContent = `${cidade.name}, ${cidade.country}`;
-    document.querySelector("#temperatura-atual").textContent = `${clima.temperature_2m}°C`;
-    document.querySelector("#vento-atual").textContent = `${clima.wind_speed_10m} km/h`;
-    document.querySelector("#umidade-atual").textContent = `${clima.relative_humidity_2m}%`;
+    const nomeCidadeA = inputCidadeA.value;
+    const nomeCidadeB = inputCidadeB.value;
+
+    const cidadeA = await ServicoGeocode.buscarInfoCidade(nomeCidadeA);
+    const cidadeB = await ServicoGeocode.buscarInfoCidade(nomeCidadeB);
+
+    const climaA = await ServicoClima.buscarClimaAtual(cidadeA.latitude, cidadeA.longitude);
+    const climaB = await ServicoClima.buscarClimaAtual(cidadeB.latitude, cidadeB.longitude);
+
+    document.querySelector("#nome-cidade-a").textContent =`${cidadeA.name}, ${cidadeA.country}`;
+    document.querySelector("#temperatura-cidade-a").textContent =`${climaA.temperature_2m}°C`;
+    document.querySelector("#vento-cidade-a").textContent =`${climaA.wind_speed_10m} km/h`;
+    document.querySelector("#umidade-cidade-a").textContent =`${climaA.relative_humidity_2m}%`;
+
+    document.querySelector("#nome-cidade-b").textContent =`${cidadeB.name}, ${cidadeB.country}`;
+    document.querySelector("#temperatura-cidade-b").textContent =`${climaB.temperature_2m}°C`;
+    document.querySelector("#vento-cidade-b").textContent =`${climaB.wind_speed_10m} km/h`;
+    document.querySelector("#umidade-cidade-b").textContent =`${climaB.relative_humidity_2m}%`;
+
 }
 
-const botaoBuscar = document.querySelector("button");
+const botaoComparar = document.querySelector("#btn-comparar");
 
-botaoBuscar.addEventListener("click", buscarCidade);
+botaoComparar.addEventListener("click",compararCidades);
