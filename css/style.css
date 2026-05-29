@@ -158,8 +158,19 @@ iframe{
     padding: 25px;
 }
 
+/*-----------FAVORITOS----------------*/
+.favoritos-container {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 25px;
+    padding: 25px;
+}
 
-
+.card-favorito{
+    display: flex;
+    flex-direction: column;
+}
 
 
 

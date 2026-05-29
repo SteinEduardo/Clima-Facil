@@ -1,31 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
-    <title>Document</title>
+    <title>Configurações - Clima facil</title>
 </head>
-<body>
-        <header>
-        <h2>Configurações</h2>
-        <h3>Loacalização atual</h3>
-        <h3>Data</h3>
-    </header>
 
+<body>
     <div id="sidebar"></div>
 
-    <main>
-        <section>
-            <div>
-                <h3>UNIDADE DE MEDIDAS</h3>
-                <button>Celsius C° m/s</button>
-                <button>Fahrenheit F° mph</button>
-            </div>
-        </section>
-    </main>
+    <div class="container">
+        <header>
+            <h2>Configurações</h2>
+            <h3>Localização atual</h3>
+            <h3>Data</h3>
+        </header>
+
+        <main class="dashboard">
+            <section class="configuracoes">
+                <article>
+                    <h3>Cidade padrão</h3>
+                    <input id="cidade-padrao" type="text" placeholder="Ex: Curitiba">
+                </article>
+
+                <article>
+                    <h3>Unidade de temperatura</h3>
+                    <select id="unidade-temperatura">
+                        <option value="c">Celsius (°C)</option>
+
+                        <option value="f">Fahrenheit (°F)</option>
+                    </select>
+                </article>
+
+                <button id="btn-salvar">Salvar configurações</button>
+                <button id="btn-voltar-padrao">Configurações padrão</button>
+            </section>
+        </main>
+    </div>
 
     <script src="../js/sidebar.js"></script>
-</body>
+    <script src="../js/configuracoes.js"></script>
+
 </body>
 </html>

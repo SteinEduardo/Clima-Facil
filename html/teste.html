@@ -9,10 +9,19 @@
 </head>
 
 <body>
-    <article class="card-dia">
-        <p>${previsao.time[i]}</p>
-        <p>Máx: ${previsao.temperature_2m_max[i]}°C</p>
-        <p>Mín: ${previsao.temperature_2m_min[i]}°C</p>
+    <article class="card-favorito">
+        <h3>${cidade.name}</h3>
+        <p>
+            Temperatura: ${clima.temperature_2m}°C
+        </p>
+
+        <p>
+            Vento: ${clima.wind_speed_10m} km/h
+        </p>
+
+        <p>
+            Umidade: ${clima.relative_humidity_2m}%
+        </p>
     </article>
 </body>
 

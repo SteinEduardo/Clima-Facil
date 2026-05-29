@@ -32,14 +32,10 @@ async function infosDaCidade() {
     cidade.latitude,
     cidade.longitude,
   );
-  document.querySelector("#cidade-atual").textContent =
-    `${cidade.name}, ${cidade.country}`;
-  document.querySelector("#temperatura-atual").textContent =
-    `${clima.temperature_2m}°C`;
-  document.querySelector("#vento-atual").textContent =
-    `${clima.wind_speed_10m} km/h`;
-  document.querySelector("#umidade-atual").textContent =
-    `${clima.relative_humidity_2m}%`;
+  document.querySelector("#cidade-atual").textContent =`${cidade.name}, ${cidade.country}`;
+  document.querySelector("#temperatura-atual").textContent =`${clima.temperature_2m}°C`;
+  document.querySelector("#vento-atual").textContent =`${clima.wind_speed_10m} km/h`;
+  document.querySelector("#umidade-atual").textContent =`${clima.relative_humidity_2m}%`;
   document.querySelector("#descricao-clima").textContent = "Clima atualizado";
 }
 
