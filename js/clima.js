@@ -26,12 +26,15 @@ class ServicoClima {
   }
 }
 
+function pegarCidadePadrao() {
+  return localStorage.getItem("cidadePadrao") || "Curitiba";
+}
+
 async function infosDaCidade() {
-  const cidade = await ServicoGeocode.buscarInfoCidade("Curitiba");
-  const clima = await ServicoClima.buscarClimaAtual(
-    cidade.latitude,
-    cidade.longitude,
-  );
+  const cidadePadrao = pegarCidadePadrao();
+  const cidade = await ServicoGeocode.buscarInfoCidade(cidadePadrao);
+  const clima = await ServicoClima.buscarClimaAtual(cidade.latitude, cidade.longitude,);
+
   document.querySelector("#cidade-atual").textContent =`${cidade.name}, ${cidade.country}`;
   document.querySelector("#temperatura-atual").textContent =`${clima.temperature_2m}°C`;
   document.querySelector("#vento-atual").textContent =`${clima.wind_speed_10m} km/h`;

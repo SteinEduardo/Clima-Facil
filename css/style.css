@@ -35,6 +35,10 @@ body{
     background-color: rgb(150, 105, 201);
 }
 
+#sidebar a.ativo{
+    background-color: rgb(150, 105, 201);
+}
+
 /*-----------CONTAINER----------------*/
 .container{
     background-color: rgb(150, 105, 201);;
