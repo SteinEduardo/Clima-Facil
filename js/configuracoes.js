@@ -16,8 +16,22 @@ function carregarConfiguracoes(){
     document.querySelector("#unidade-temperatura").value = unidadeTemperatura || "c";
 }
 
+function voltarConfiguracoesPadrao() {
+    localStorage.setItem("cidadePadrao", "Curitiba");
+    localStorage.setItem("unidadeTemperatura", "c");
+
+    document.querySelector("#cidade-padrao").value = "Curitiba";
+    document.querySelector("#unidade-temperatura").value = "c";
+
+    alert("Configurações padrão restauradas.");
+}
+
 const botaoSalvar = document.querySelector("#btn-salvar");
 
 botaoSalvar.addEventListener("click",salvarConfiguracoes);
 
 carregarConfiguracoes();
+
+const botaoVoltarPadrao = document.querySelector("#btn-voltar-padrao");
+
+botaoVoltarPadrao.addEventListener("click", voltarConfiguracoesPadrao);
