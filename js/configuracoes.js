@@ -5,7 +5,7 @@ function salvarConfiguracoes(){
     localStorage.setItem("cidadePadrao", cidadePadrao);
     localStorage.setItem("unidadeTemperatura",unidadeTemperatura);
 
-    console.log("Configurações salvas");
+    alert("Configurações salvas");
 }
 
 function carregarConfiguracoes(){
