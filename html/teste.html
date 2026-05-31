@@ -9,20 +9,9 @@
 </head>
 
 <body>
-    <article class="card-favorito">
-        <h3>${cidade.name}</h3>
-        <p>
-            Temperatura: ${clima.temperature_2m}°C
-        </p>
-
-        <p>
-            Vento: ${clima.wind_speed_10m} km/h
-        </p>
-
-        <p>
-            Umidade: ${clima.relative_humidity_2m}%
-        </p>
-    </article>
+    <button type="button" onclick="removerFavorito('${cidadeNome}')">
+        Remover
+    </button>
 </body>
 
 </html>
