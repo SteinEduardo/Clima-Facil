@@ -6,6 +6,14 @@ class ServicoGeocode {
 
     return dados.results[0];
   }
+
+  static async buscarListaCidades(cidade) {
+    const url = `https://geocoding-api.open-meteo.com/v1/search?name=${cidade}&count=10&language=pt&format=json`;
+    const resposta = await fetch(url);
+    const dados = await resposta.json();
+
+    return dados.results;
+  }
 }
 
 class ServicoClima {
@@ -109,7 +117,7 @@ async function infosDaCidade() {
   const cidade = await ServicoGeocode.buscarInfoCidade(cidadePadrao);
   const clima = await ServicoClima.buscarClimaAtual(cidade.latitude, cidade.longitude);
 
-  document.querySelector("#cidade-atual").textContent = `${cidade.name}, ${cidade.country}`;
+  document.querySelector("#cidade-atual").textContent = `${cidade.name}, ${cidade.admin1 || ""}, ${cidade.country}`;
   document.querySelector("#temperatura-atual").textContent = `${clima.temperature_2m}°${pegarSimboloTemperatura()}`;
   document.querySelector("#vento-atual").textContent = `${clima.wind_speed_10m} km/h`;
   document.querySelector("#umidade-atual").textContent = `${clima.relative_humidity_2m}%`;

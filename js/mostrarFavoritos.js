@@ -25,7 +25,7 @@ async function carregarFavoritos() {
 
         containerFavoritos.innerHTML += `
             <article class="card-favorito">
-                <h3>${cidade.name}</h3>
+                <h3>${cidade.name}, ${cidade.admin1 || ""}, ${cidade.country}</h3>
                 <p>${traduzirClima(clima.weather_code)}</p>
                 <p>Temperatura: ${clima.temperature_2m}°${pegarSimboloTemperatura()}</p>
                 <p>Vento: ${clima.wind_speed_10m} km/h</p>

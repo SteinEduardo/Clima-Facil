@@ -20,7 +20,7 @@ async function compararCidades(){
 
     //CIDADE B
     document.querySelector("#nome-cidade-b").textContent =`${cidadeB.name}, ${cidadeB.country}`;
-    document.querySelector("#condicao-cidade-b").textContent = traduzirClima(climaB.weather_code);
+    document.querySelector("#descricao-cidade-b").textContent = traduzirClima(climaB.weather_code);
     document.querySelector("#temperatura-cidade-b").textContent =`${climaB.temperature_2m}°${pegarSimboloTemperatura()}`;
     document.querySelector("#vento-cidade-b").textContent =`${climaB.wind_speed_10m} km/h`;
     document.querySelector("#umidade-cidade-b").textContent =`${climaB.relative_humidity_2m}%`;
