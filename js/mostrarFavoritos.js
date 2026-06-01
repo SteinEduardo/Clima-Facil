@@ -19,8 +19,7 @@ async function carregarFavoritos() {
         return;
     }
 
-    for (const cidadeNome of favoritos) {
-        const cidade = await ServicoGeocode.buscarInfoCidade(cidadeNome);
+    for (const cidade of favoritos) {
         const clima = await ServicoClima.buscarClimaAtual(cidade.latitude, cidade.longitude);
 
         containerFavoritos.innerHTML += `
@@ -30,31 +29,48 @@ async function carregarFavoritos() {
                 <p>Temperatura: ${clima.temperature_2m}°${pegarSimboloTemperatura()}</p>
                 <p>Vento: ${clima.wind_speed_10m} km/h</p>
                 <p>Umidade: ${clima.relative_humidity_2m}%</p>
-                <button onclick="cidadePadraoBtn('${cidadeNome}')">
+                <button type="button" onclick="cidadePadraoBtn(${cidade.id})">
                     Tornar padrão
                 </button>
-                <button type="button" onclick="removerFavorito('${cidadeNome}')">
+                <button type="button" onclick="removerFavorito(${cidade.id})">
                     Remover
                 </button>
-
             </article>
         `;
     }
 }
 
-function removerFavorito(nomeCidade) {
-    const confirmar = confirm(`Deseja realmente remover ${nomeCidade} dos favoritos?`);
+function removerFavorito(idCidade) {
+    const confirmar = confirm("Deseja realmente remover essa cidade dos favoritos?");
 
     if (!confirmar) {
         return;
     }
 
     const favoritos = pegarFavoritos();
-    const favoritosAtualizados = favoritos.filter(cidade => cidade !== nomeCidade);
+    const favoritosAtualizados = favoritos.filter(cidade => cidade.id !== idCidade);
 
     localStorage.setItem("favoritos", JSON.stringify(favoritosAtualizados));
 
     carregarFavoritos();
+}
+
+function cidadePadraoBtn(idCidade) {
+    const favoritos = pegarFavoritos();
+
+    console.log("id recebido:", idCidade);
+    console.log("favoritos:", favoritos);
+
+    const cidade = favoritos.find(cidade => cidade.id === idCidade);
+
+    if (!cidade) {
+        alert("Cidade não encontrada.");
+        return;
+    }
+
+    localStorage.setItem("cidadePadrao", JSON.stringify(cidade));
+
+    alert(`${cidade.name} definida como cidade padrão.`);
 }
 
 carregarFavoritos();

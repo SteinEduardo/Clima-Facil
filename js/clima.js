@@ -113,20 +113,26 @@ function traduzirClima(codigo) {
 }
 
 async function infosDaCidade() {
-  const cidadePadrao = pegarCidadePadrao();
-  const cidade = await ServicoGeocode.buscarInfoCidade(cidadePadrao);
-  const clima = await ServicoClima.buscarClimaAtual(cidade.latitude, cidade.longitude);
+    const cidadePadraoSalva = localStorage.getItem("cidadePadrao");
+    let cidade;
 
-  document.querySelector("#cidade-atual").textContent = `${cidade.name}, ${cidade.admin1 || ""}, ${cidade.country}`;
-  document.querySelector("#temperatura-atual").textContent = `${clima.temperature_2m}°${pegarSimboloTemperatura()}`;
-  document.querySelector("#vento-atual").textContent = `${clima.wind_speed_10m} km/h`;
-  document.querySelector("#umidade-atual").textContent = `${clima.relative_humidity_2m}%`;
-  document.querySelector("#descricao-clima").textContent = traduzirClima(clima.weather_code);
+    if (cidadePadraoSalva) {
+        cidade = JSON.parse(cidadePadraoSalva);
+    } else {
+        cidade = await ServicoGeocode.buscarInfoCidade("Curitiba");
+    }
+
+    const clima = await ServicoClima.buscarClimaAtual(cidade.latitude, cidade.longitude);
+
+    document.querySelector("#cidade-atual").textContent = `${cidade.name}, ${cidade.admin1 || ""}, ${cidade.country}`;
+    document.querySelector("#temperatura-atual").textContent = `${clima.temperature_2m}°${pegarSimboloTemperatura()}`;
+    document.querySelector("#vento-atual").textContent = `${clima.wind_speed_10m} km/h`;
+    document.querySelector("#umidade-atual").textContent = `${clima.relative_humidity_2m}%`;
+    document.querySelector("#descricao-clima").textContent = traduzirClima(clima.weather_code);
 }
 
-async function previsaoCincoDias(nomeCidade) {
-  const cidade = await ServicoGeocode.buscarInfoCidade(nomeCidade);
-  const previsao = await ServicoClima.buscarPrevisaoDiaria(cidade.latitude,cidade.longitude);
+async function previsaoCincoDias(latitude, longitude) {
+  const previsao = await ServicoClima.buscarPrevisaoDiaria(latitude, longitude);
   const containerCincoDias = document.querySelector(".previsao-5dias");
 
   containerCincoDias.innerHTML = "";
@@ -145,6 +151,12 @@ async function previsaoCincoDias(nomeCidade) {
 
 infosDaCidade();
 
-const cidadePadrao = localStorage.getItem("cidadePadrao") || "Curitiba";
+const cidadePadraoSalva = localStorage.getItem("cidadePadrao");
 
-previsaoCincoDias(cidadePadrao);
+if (cidadePadraoSalva) {
+    const cidadePadrao = JSON.parse(cidadePadraoSalva);
+
+    previsaoCincoDias(cidadePadrao.latitude, cidadePadrao.longitude);
+} else {
+    previsaoCincoDias(-25.42778, -49.27306);
+}

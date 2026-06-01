@@ -26,16 +26,16 @@ function voltarConfiguracoesPadrao() {
     alert("Configurações padrão restauradas.");
 }
 
-function cidadePadraoBtn(nomeCidade) {
+function cidadePadraoBtn(cidade) {
 
-    if (nomeCidade === "") {
+    if (!cidade) {
         alert("Nenhuma cidade selecionada.");
         return;
     }
 
-    localStorage.setItem("cidadePadrao", nomeCidade);
+    localStorage.setItem("cidadePadrao", JSON.stringify(cidade));
 
-    alert(`${nomeCidade} definida como cidade padrão.`);
+    alert(`${cidade.name} definida como cidade padrão.`);
 }
 
 const botaoSalvar = document.querySelector("#btn-salvar");

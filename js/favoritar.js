@@ -8,62 +8,16 @@ function pegarFavoritos() {
     return JSON.parse(favoritosSalvos);
 }
 
-function favoritarCidade() {
-    const cidadeAtual = document.querySelector("#cidade-atual").textContent;
-
-    if (cidadeAtual === "") {
+function favoritarCidade(cidadeAtual) {
+    if (!cidadeAtual) {
         alert("Nenhuma cidade carregada.");
         return;
     }
 
     const favoritos = pegarFavoritos();
+    const jaExiste = favoritos.some(cidade => cidade.id === cidadeAtual.id);
 
-    if (favoritos.includes(cidadeAtual)) {
-        alert("Essa cidade já está nos favoritos");
-        return;
-    }
-
-    favoritos.push(cidadeAtual);
-
-    localStorage.setItem("favoritos", JSON.stringify(favoritos));
-
-    alert("Cidade adicionada aos favoritos com sucesso");
-}
-
-//FAVORITAR NA PAGINA DE COMPARAÇÃO
-function favoritarCidadeA() {
-    const cidadeAtual = document.querySelector("#nome-cidade-a").textContent;
-
-    if (cidadeAtual === "") {
-        alert("Nenhuma cidade carregada.");
-        return;
-    }
-
-    const favoritos = pegarFavoritos();
-
-    if (favoritos.includes(cidadeAtual)) {
-        alert("Essa cidade já está nos favoritos");
-        return;
-    }
-
-    favoritos.push(cidadeAtual);
-
-    localStorage.setItem("favoritos", JSON.stringify(favoritos));
-
-    alert("Cidade adicionada aos favoritos com sucesso");
-}
-
-function favoritarCidadeB() {
-    const cidadeAtual = document.querySelector("#nome-cidade-b").textContent;
-
-    if (cidadeAtual === "") {
-        alert("Nenhuma cidade carregada.");
-        return;
-    }
-
-    const favoritos = pegarFavoritos();
-
-    if (favoritos.includes(cidadeAtual)) {
+    if (jaExiste) {
         alert("Essa cidade já está nos favoritos");
         return;
     }
@@ -78,21 +32,23 @@ function favoritarCidadeB() {
 const botaoFavoritar = document.querySelector("#btn-favoritar");
 
 if (botaoFavoritar) {
-
-    botaoFavoritar.addEventListener("click", favoritarCidade);
-
+    botaoFavoritar.addEventListener("click", function () {
+        favoritarCidade(window.cidadeSelecionada);
+    });
 }
 
-//FAVORITAR NA PAGINA DE COMPARAÇÃO
 const botaoA = document.querySelector("#btn-favoritar-a");
 
 if (botaoA) {
-    botaoA.addEventListener("click",favoritarCidadeA);
+    botaoA.addEventListener("click", function () {
+        favoritarCidade(window.cidadeComparacaoA);
+    });
 }
 
 const botaoB = document.querySelector("#btn-favoritar-b");
 
-if (botaoB
-) {
-    botaoB.addEventListener("click",favoritarCidadeB);
+if (botaoB) {
+    botaoB.addEventListener("click", function () {
+        favoritarCidade(window.cidadeComparacaoB);
+    });
 }
