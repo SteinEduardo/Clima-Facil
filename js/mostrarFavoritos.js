@@ -30,9 +30,13 @@ async function carregarFavoritos() {
                 <p>Temperatura: ${clima.temperature_2m}°${pegarSimboloTemperatura()}</p>
                 <p>Vento: ${clima.wind_speed_10m} km/h</p>
                 <p>Umidade: ${clima.relative_humidity_2m}%</p>
+                <button onclick="cidadePadraoBtn('${cidadeNome}')">
+                    Tornar padrão
+                </button>
                 <button type="button" onclick="removerFavorito('${cidadeNome}')">
                     Remover
                 </button>
+
             </article>
         `;
     }

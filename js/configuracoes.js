@@ -26,6 +26,18 @@ function voltarConfiguracoesPadrao() {
     alert("Configurações padrão restauradas.");
 }
 
+function cidadePadraoBtn(nomeCidade) {
+
+    if (nomeCidade === "") {
+        alert("Nenhuma cidade selecionada.");
+        return;
+    }
+
+    localStorage.setItem("cidadePadrao", nomeCidade);
+
+    alert(`${nomeCidade} definida como cidade padrão.`);
+}
+
 const botaoSalvar = document.querySelector("#btn-salvar");
 
 botaoSalvar.addEventListener("click",salvarConfiguracoes);

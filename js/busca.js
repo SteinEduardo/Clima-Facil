@@ -14,7 +14,7 @@ async function buscarCidade() {
 
     botaoCidade.textContent = `${cidade.name} - ${cidade.admin1}, ${cidade.country}`;
     botaoCidade.addEventListener("click", async function () {
-        const clima = await ServicoClima.buscarClimaAtual(cidade.latitude, cidade.longitude);
+      const clima = await ServicoClima.buscarClimaAtual(cidade.latitude, cidade.longitude);
 
       document.querySelector("#cidade-atual").textContent = `${cidade.name}, ${cidade.country}`;
       document.querySelector("#temperatura-atual").textContent = `${clima.temperature_2m}°${pegarSimboloTemperatura()}`;
@@ -34,3 +34,12 @@ async function buscarCidade() {
 const botaoBuscar = document.querySelector("button");
 
 botaoBuscar.addEventListener("click", buscarCidade);
+
+//TORNAR PADRAO BOTAO
+const botaoCidadePadrao = document.querySelector("#btn-cidade-padrao");
+
+botaoCidadePadrao.addEventListener("click", function () {
+    const cidadeAtual = document.querySelector("#cidade-atual").textContent;
+
+    cidadePadraoBtn(cidadeAtual);
+});
