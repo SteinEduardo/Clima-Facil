@@ -272,3 +272,48 @@ iframe{
     flex-direction: column;
     gap: 8px;
 }
+
+/*-----------CONFIGURAÇÕES----------------*/
+.configuracoes{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 25px;
+}
+
+.configuracoes article{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.busca-cidade-padrao{
+    display: flex;
+    gap: 8px;
+}
+
+.busca-cidade-padrao input{
+    width: 100%;
+}
+
+.lista-cidade-padrao{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.lista-cidade-padrao
+.opcao-cidade{
+    width: 100%;
+    text-align: left;
+    padding: 8px;
+}
+
+.botoes-configuracoes{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+}
