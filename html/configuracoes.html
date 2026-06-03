@@ -22,7 +22,14 @@
             <section class="configuracoes">
                 <article>
                     <h3>Cidade padrão</h3>
-                    <input id="cidade-padrao" type="text" placeholder="Curitiba">
+                    <div class="busca-cidade-padrao">
+                        <input id="cidade-padrao" type="text" placeholder="Curitiba">
+                        <button id="btn-buscar-cidade-padrao" type="button">
+                            Buscar
+                        </button>
+                    </div>
+                    
+                    <div class="lista-cidade-padrao"></div>
                 </article>
 
                 <article>
@@ -40,6 +47,7 @@
     </div>
 
     <script src="../js/sidebar.js"></script>
+    <script src="../js/clima.js"></script>
     <script src="../js/configuracoes.js"></script>
 </body>
 </html>

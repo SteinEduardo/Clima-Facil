@@ -178,6 +178,13 @@ button:hover{
     border-radius: 10px;
 }
 
+#input-cidade-a,
+#input-cidade-b{
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+}
+
 /*-----------FAVORITOS----------------*/
 .favoritos-container{
     display: grid;
