@@ -1,8 +1,30 @@
+/*
+  BUSCA AVANÇADA DE CIDADES
+  Responsável por:
+    Buscar cidades na API Geocoding
+    Exibir lista de sugestões
+    Atualizar clima atual da cidade escolhida
+    Atualizar previsão dos próximos 5 dias
+*/
+
 async function buscarCidade() {
   const inputCidade = document.querySelector("input");
   const nomeCidade = inputCidade.value;
-  const listaCidades = await ServicoGeocode.buscarListaCidades(nomeCidade);
   const containerLista = document.querySelector(".lista-cidades");
+
+  if (nomeCidade.trim() === "") {
+    alert("Digite o nome de uma cidade.");
+    return;
+  }
+
+  containerLista.innerHTML = "<p>Pesquisando cidades...</p>";
+
+  const listaCidades = await ServicoGeocode.buscarListaCidades(nomeCidade);
+
+  if (!listaCidades) {
+    containerLista.innerHTML = `<p>Nenhuma cidade encontrada para "${nomeCidade}".</p>`;
+    return;
+  }
 
   containerLista.innerHTML = "";
 
@@ -16,6 +38,7 @@ async function buscarCidade() {
     botaoCidade.addEventListener("click", async function () {
       const clima = await ServicoClima.buscarClimaAtual(cidade.latitude, cidade.longitude);
 
+      // Armazena a cidade selecionada para uso em favoritos e definição de cidade padrão
       window.cidadeSelecionada = cidade;
 
       document.querySelector("#cidade-atual").textContent = `${cidade.name},  ${cidade.country}`;
@@ -33,6 +56,7 @@ async function buscarCidade() {
   }
 }
 
+// BOTÃO DE BUSCA
 const botaoBuscar = document.querySelector("button");
 
 botaoBuscar.addEventListener("click", buscarCidade);
@@ -43,3 +67,14 @@ const botaoCidadePadrao = document.querySelector("#btn-cidade-padrao");
 botaoCidadePadrao.addEventListener("click", function () {
     cidadePadraoBtn(window.cidadeSelecionada);
 });
+
+//PESQUISAR COM O ENTER
+const inputBusca = document.querySelector("input");
+
+if (inputBusca) {
+    inputBusca.addEventListener("keydown", function(event) {
+        if (event.key === "Enter") {
+            buscarCidade();
+        }
+    });
+}

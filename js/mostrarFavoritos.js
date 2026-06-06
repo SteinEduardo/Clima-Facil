@@ -1,3 +1,13 @@
+/*
+    PÁGINA DE FAVORITOS
+    Responsável por:
+        Carregar cidades favoritas
+        Exibir clima atualizado de cada cidade
+        Remover favoritos
+        Definir uma cidade favorita como padrão
+*/ 
+
+// Recupera a lista de favoritos salva no navegador
 function pegarFavoritos() {
     const favoritosSalvos = localStorage.getItem("favoritos");
 
@@ -8,6 +18,7 @@ function pegarFavoritos() {
     return JSON.parse(favoritosSalvos);
 }
 
+// Carrega todos os favoritos e cria os cards na tela
 async function carregarFavoritos() {
     const favoritos = pegarFavoritos();
     const containerFavoritos = document.querySelector(".favoritos-container");
@@ -40,6 +51,8 @@ async function carregarFavoritos() {
     }
 }
 
+
+// Remove uma cidade da lista de favoritos
 function removerFavorito(idCidade) {
     const confirmar = confirm("Deseja realmente remover essa cidade dos favoritos?");
 
@@ -48,6 +61,7 @@ function removerFavorito(idCidade) {
     }
 
     const favoritos = pegarFavoritos();
+    // Remove apenas a cidade correspondente ao ID recebido
     const favoritosAtualizados = favoritos.filter(cidade => cidade.id !== idCidade);
 
     localStorage.setItem("favoritos", JSON.stringify(favoritosAtualizados));
@@ -55,6 +69,7 @@ function removerFavorito(idCidade) {
     carregarFavoritos();
 }
 
+// Define uma cidade favorita como cidade padrão do sistema
 function cidadePadraoBtn(idCidade) {
     const favoritos = pegarFavoritos();
 

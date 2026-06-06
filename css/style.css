@@ -317,3 +317,14 @@ iframe{
     gap: 10px;
     justify-content: center;
 }
+
+/*-----------PREVISAO HORA EM HORA----------------*/
+.tabela-previsao{
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+.tabela-previsao td{
+    padding: 10px;
+}

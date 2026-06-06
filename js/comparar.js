@@ -1,3 +1,13 @@
+/*
+    COMPARAÇÃO ENTRE CIDADES
+    Responsável por:
+        Buscar sugestões para Cidade A e Cidade B
+        Permitir escolher a cidade correta
+        Atualizar os cards de comparação
+        Guardar as cidades escolhidas para favoritar depois
+*/
+
+// Atualiza o card de comparação com os dados da cidade escolhida
 async function atualizarCardComparacao(cidade, tipoCidade) {
     const clima = await ServicoClima.buscarClimaAtual(cidade.latitude, cidade.longitude);
 
@@ -22,14 +32,29 @@ async function atualizarCardComparacao(cidade, tipoCidade) {
     }
 }
 
+// Cria a lista de possíveis cidades para Cidade A ou Cidade B
 async function mostrarListaComparacao(inputId, listaClasse, tipoCidade) {
     const inputCidade = document.querySelector(inputId);
     const nomeCidade = inputCidade.value;
-    const listaCidades = await ServicoGeocode.buscarListaCidades(nomeCidade);
     const containerLista = document.querySelector(listaClasse);
+
+    if (nomeCidade.trim() === "") {
+        alert("Digite o nome da cidade.");
+        return;
+    }
+
+    containerLista.innerHTML = "<p>Pesquisando cidades...</p>";
+
+    const listaCidades = await ServicoGeocode.buscarListaCidades(nomeCidade);
+
+    if (!listaCidades) {
+        containerLista.innerHTML = `<p>Nenhuma cidade encontrada para "${nomeCidade}".</p>`;
+        return;
+    }
 
     containerLista.innerHTML = "";
 
+    // Cria um botão para cada cidade encontrada
     for (const cidade of listaCidades) {
         const botaoCidade = document.createElement("button");
 
@@ -51,6 +76,27 @@ async function compararCidades() {
     await mostrarListaComparacao("#input-cidade-b", ".lista-cidades-b", "b");
 }
 
+// Botão principal da página de comparação
 const botaoComparar = document.querySelector("#btn-comparar");
 
 botaoComparar.addEventListener("click", compararCidades);
+
+//PESQUISAR COM O ENTER
+const inputCidadeA = document.querySelector("#input-cidade-a");
+const inputCidadeB = document.querySelector("#input-cidade-b");
+
+if (inputCidadeA) {
+    inputCidadeA.addEventListener("keydown", function(event) {
+        if (event.key === "Enter") {
+            compararCidades();
+        }
+    });
+}
+
+if (inputCidadeB) {
+    inputCidadeB.addEventListener("keydown", function(event) {
+        if (event.key === "Enter") {
+            compararCidades();
+        }
+    });
+}

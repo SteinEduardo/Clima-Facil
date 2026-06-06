@@ -14,8 +14,8 @@
     <div class="container">
         <header>
             <h2>Painel central</h2>
-            <h3>Loacalização atual</h3>
-            <h3>Data</h3>
+            <h3 id="localizacao-atual">Localização atual: </h3>
+            <h3 id="data-atual">Data: </h3>
         </header>
 
         <main class="dashboard">
@@ -56,19 +56,18 @@
             <!--FIM CARD PRINCIPAL-->
 
             <section class="card-resumo">
-                <article>ALERTAS</article>
-                <article>PREVISÃO PROXIMA HORA</article>
-                <article>RESUMO</article>
+                <div id="previsao-horaria"></div>
             </section>
 
             <section>
-                <iframe src="https://www.google.com/maps?q=Curitiba,PR&output=embed"></iframe>
+                <iframe id="mapa-cidade"></iframe>
             </section>
         </main>
     </div>
 
     <script src="../js/sidebar.js"></script>
     <script src="../js/clima.js"></script>
+    <script src="../js/header.js"></script>
 </body>
 
 </html>
