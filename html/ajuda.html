@@ -1,29 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
-    <title>Document</title>
+    <title>Ajuda - Clima Fácil</title>
 </head>
-<body>
-    <header>
-        <h2>Ajuda</h2>
-        <h3 id="localizacao-atual">Localização atual: </h3>
-        <h3 id="data-atual">Data: </h3>
-    </header>
 
+<body>
     <div id="sidebar"></div>
 
-    <main>
-        <section>
-            DOCUMENTAÇÃO
-        </section>
-    </main>
+    <div class="container">
+        <header>
+            <h2>Ajuda</h2>
+            <h3 id="localizacao-atual">Localização atual:</h3>
+            <h3 id="data-atual">Data:</h3>
+        </header>
+
+        <main class="dashboard">
+            <section class="ajuda-container">
+
+                <article class="card-ajuda">
+                    <h3>Painel Central</h3>
+                    <p>
+                        Exibe a cidade padrão configurada pelo usuário,
+                        juntamente com temperatura, umidade, vento,
+                        mapa da região e previsão das próximas horas.
+                    </p>
+                </article>
+
+                <article class="card-ajuda">
+                    <h3>Busca Avançada</h3>
+                    <p>
+                        Permite pesquisar cidades e consultar condições
+                        climáticas atuais e previsão para os próximos
+                        cinco dias.
+                    </p>
+                </article>
+
+                <article class="card-ajuda">
+                    <h3>Comparar Cidades</h3>
+                    <p>
+                        Possibilita comparar duas cidades lado a lado,
+                        exibindo temperatura, vento, umidade e condição
+                        climática.
+                    </p>
+                </article>
+
+                <article class="card-ajuda">
+                    <h3>Favoritos</h3>
+                    <p>
+                        Salve cidades de interesse para acesso rápido e
+                        defina qualquer uma delas como cidade padrão.
+                    </p>
+                </article>
+
+                <article class="card-ajuda">
+                    <h3>Configurações</h3>
+                    <p>
+                        Permite escolher a cidade padrão do sistema e a
+                        unidade de temperatura (Celsius ou Fahrenheit).
+                    </p>
+                </article>
+
+                <article class="card-ajuda">
+                    <h3>Dicas de Uso</h3>
+                    <ul>
+                        <li>Utilize Enter para pesquisar mais rápido.</li>
+                        <li>Adicione cidades aos favoritos.</li>
+                        <li>Defina sua cidade favorita como padrão.</li>
+                        <li>Verifique os alertas ambientais regularmente.</li>
+                    </ul>
+                </article>
+
+            </section>
+        </main>
+    </div>
 
     <script src="../js/sidebar.js"></script>
     <script src="../js/clima.js"></script>
     <script src="../js/header.js"></script>
 </body>
-</body>
+
 </html>

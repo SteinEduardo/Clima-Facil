@@ -5,11 +5,10 @@
 }
 
 body{
-    background-color: rgb(120, 49, 250);
+    background: #4b3f72;
     display: flex;
-    justify-content: center;
     color: #fff;
-    max-width: 1280px;
+    min-height: 100vh;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -17,9 +16,10 @@ body{
 .card-dia,
 .card-favorito,
 .card-comparacao,
-.dashboard
+.dashboard,
 header{
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    background-color: #55689b;
 }
 
 input,
@@ -30,6 +30,11 @@ select{
 }
 
 /*-----------SIDEBAR----------------*/
+#sidebar{
+    min-height: 100vh;
+    background-color: rgb(188, 135, 248);
+}
+
 #sidebar aside{
     background-color: rgb(188, 135, 248);
     width: 240px;
@@ -347,4 +352,44 @@ iframe{
 
 .tabela-previsao td{
     padding: 10px;
+}
+
+/*-----------ALERTAS AMBIENTAIS----------------*/
+.alertas-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 25px;
+    padding: 25px;
+}
+
+.card-alerta{
+    background-color: rgb(188, 135, 248);
+    padding: 25px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/*-----------AJUDA----------------*/
+.ajuda-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    padding: 25px;
+}
+
+.card-ajuda{
+    background-color: rgb(188, 135, 248);
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card-ajuda ul{
+    padding-left: 20px;
 }

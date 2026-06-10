@@ -1,25 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
-    <title>Document</title>
+    <title>Alertas Ambientais - Clima Fácil</title>
 </head>
 <body>
-    <header>
-        <h2>Alertas</h2>
-        <h3 id="localizacao-atual">Localização atual: </h3>
-        <h3 id="data-atual">Data: </h3>
-    </header>
-
     <div id="sidebar"></div>
 
-    <main>
-        <section>
-            CARD COM RECOMEDAÇÃO DA DEFESA CIVIL
-        </section>
-    </main>
+    <div class="container">
+        <header>
+            <h2>Alertas Ambientais</h2>
+            <h3 id="localizacao-atual">Localização atual:</h3>
+            <h3 id="data-atual">Data:</h3>
+        </header>
+
+        <main class="dashboard">
+            <section class="alertas-container">
+                <article class="card-alerta">
+                    <h3>Recomendações da Defesa Civil</h3>
+
+                    <p>
+                        Em caso de chuvas fortes, evite áreas alagadas, encostas, rios e locais com risco de deslizamento.
+                    </p>
+
+                    <p>
+                        Mantenha documentos importantes protegidos, acompanhe canais oficiais e siga as orientações da Defesa Civil da sua região.
+                    </p>
+                </article>
+
+                <article class="card-alerta">
+                    <h3>Cuidados em tempestades</h3>
+
+                    <p>
+                        Evite ficar próximo de árvores, postes, estruturas metálicas e locais abertos durante descargas elétricas.
+                    </p>
+
+                    <p>
+                        Se possível, permaneça em local seguro até a melhora das condições climáticas.
+                    </p>
+                </article>
+
+                <article class="card-alerta">
+                    <h3>Emergência</h3>
+
+                    <p>
+                        Em situações de risco, acione a Defesa Civil pelo número 199 ou o Corpo de Bombeiros pelo 193.
+                    </p>
+                </article>
+            </section>
+        </main>
+    </div>
 
     <script src="../js/sidebar.js"></script>
     <script src="../js/clima.js"></script>
